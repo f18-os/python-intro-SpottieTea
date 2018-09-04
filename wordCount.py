@@ -28,8 +28,7 @@ with open(inputFname, 'r') as inputFile:
         for line in inputFile:
                 #clear newline characters
                 line = line.strip()
-                #split line on whitespace and punctuation
-                word = re.split('[ \t]', line)
-                if word in master:
-                        
-                else:
+                #get each word on file
+                for word in line.split():
+                        if word not in master:
+                                master.append(word)
