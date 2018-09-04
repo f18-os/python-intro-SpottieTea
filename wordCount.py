@@ -31,6 +31,8 @@ with open(inputFname, 'r') as inputFile:
                 #get each word on file
                 for word in line.split():
                         if word not in master:
-                                master.append(word)
+                                master[word] = 0
+                                print(master)
                         else:
+                                master[word]+=1
                                 
