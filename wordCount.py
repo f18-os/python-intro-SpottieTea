@@ -34,4 +34,9 @@ with open(inputFname, 'r') as inputFile:
                                 master[word] = 0
                         else:
                                 master[word]+=1
-                                
+
+#export dictionary; fix 'too many values to unpack'
+with open(outputFname, 'w') as outputFile:
+        for k,v in master:
+                s=str(k)+" "+str(v)+"\n"
+                outputFile.write(s)
