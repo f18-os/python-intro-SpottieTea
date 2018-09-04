@@ -27,8 +27,8 @@ master = {}
 with open(inputFname, 'r') as inputFile:
         for line in inputFile:
                 #clear newline characters
-                line = line.strip()
-                #get each word on file
+                line = line.strip() #from wordCountTest
+                #get words on file; replace from Stackoverflow
                 for word in line.split():
                         word = word.replace(',','')
                         word = word.replace(';','')
@@ -40,7 +40,7 @@ with open(inputFname, 'r') as inputFile:
                         else:
                                 master[word]+=1
 
-#export dictionary; fix 'too many values to unpack'
+#export dictionary; from quora answer
 with open(outputFname, 'w') as outputFile:
         for k,v in master.items():
                 s=str(k)+" "+str(v)+"\n"
