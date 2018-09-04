@@ -38,4 +38,4 @@ Sources:
 
 * Writing to file: https://www.quora.com/How-do-I-write-a-dictionary-to-a-file-in-Python
   
-* With thanks to Taylor Dodson with line.split()  
+* With thanks to Taylor Dodson for suggestions for line.split()  
