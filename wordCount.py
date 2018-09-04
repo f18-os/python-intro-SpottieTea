@@ -32,3 +32,5 @@ with open(inputFname, 'r') as inputFile:
                 for word in line.split():
                         if word not in master:
                                 master.append(word)
+                        else:
+                                
