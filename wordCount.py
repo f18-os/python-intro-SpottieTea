@@ -32,7 +32,6 @@ with open(inputFname, 'r') as inputFile:
                 for word in line.split():
                         if word not in master:
                                 master[word] = 0
-                                print(master)
                         else:
                                 master[word]+=1
                                 
