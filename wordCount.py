@@ -8,14 +8,16 @@ if len(sys.argv) is not 3:
 
         print("Correct usage: wordCount.py <input text file> <output file>")
 
-            exit()
+        exit()
             
-outputFname = sys.argv[1]
-inputFname = sys.argv[2]
+inputFname = sys.argv[1]
+outputFname = sys.argv[2]
 
 #check for files
 if not os.path.exists(inputFname):
 
-        print ("text file input %s doesn't exist! Exiting" % textFname)
+        print ("text file input %s doesn't exist! Exiting" % inputFname)
 
-            exit()
+        exit()
+
+
