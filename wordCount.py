@@ -30,13 +30,18 @@ with open(inputFname, 'r') as inputFile:
                 line = line.strip()
                 #get each word on file
                 for word in line.split():
+                        word = word.replace(',','')
+                        word = word.replace(';','')
+                        word = word.replace(':','')
+                        word = word.replace('.','')
+                        word = word.replace('"','')
                         if word not in master:
-                                master[word] = 0
+                                master[word] = 1
                         else:
                                 master[word]+=1
 
 #export dictionary; fix 'too many values to unpack'
 with open(outputFname, 'w') as outputFile:
-        for k,v in master:
+        for k,v in master.items():
                 s=str(k)+" "+str(v)+"\n"
                 outputFile.write(s)
