@@ -20,4 +20,16 @@ if not os.path.exists(inputFname):
 
         exit()
 
+#dictionaries
+master = {}
 
+#open input file
+with open(inputFname, 'r') as inputFile:
+        for line in inputFile:
+                #clear newline characters
+                line = line.strip()
+                #split line on whitespace and punctuation
+                word = re.split('[ \t]', line)
+                if word in master:
+                        
+                else:
