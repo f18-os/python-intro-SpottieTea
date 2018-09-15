@@ -5,14 +5,19 @@ import os         # checking if file exists
 import subprocess # executing program
 
 
-#enter in bash in format: python3 shell.py [ufile1] [ufile2]
 
-ufile1 = sys.argv[1]
-ufile2 = sys.argv[2]
+inputuser = raw_input("Hello! Please provide two file names. \n")
 
-print(ufile1)
-print(ufile2)
+print("Accepted names %s!" % inputuser)
 
+inputuser = inputuser.split( )
+
+print("Seperating files...")
+
+ufile1 = inputuser[0]
+ufile2 = inputuser[1]
+
+print("Successfully seperated %s and %s!" % (ufile1, ufile2))
 
 pid = os.getpid()
 
