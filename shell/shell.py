@@ -21,7 +21,7 @@ forker = os.fork()
 
 if forker < 0:
 
-        os.write(2, ("fork failed, returning %d\n" % rc).encode())
+        os.write(2, ("fork failed, returning %d\n" % forker).encode())
         sys.exit(1)
 
 elif forker == 0:                   # child
