@@ -6,16 +6,18 @@ import subprocess # executing program
 
 inputuser = "none none"
 
+inputuser = input("Hello! Press enter to continue or 'exit' to exit. \n")
+
 while inputuser != "exit":
 
-        inputuser = raw_input("Hello! Please provide two file names. \n")
+        inputuser = input("Please provide two file names. \n")
 
         print("Accepted names %s!" % inputuser)
 
         inputuser = inputuser.split( )
 
         print("Seperating files...")
-
+        
         ufile1 = inputuser[0]
         ufile2 = inputuser[1]
 
