@@ -33,10 +33,10 @@ while inputuser != "exit":
                 os.write(2, ("fork failed, returning %d\n" % forker).encode())
                 sys.exit(1)
 
-        elif forker == 0:                   # child
+#        elif forker == 0:                   # child
 
-                os.write(1, ("I am child.  Name==%s  Parent's pid=%d\n" % (ufile2, pid)).encode())
+#                os.write(1, ("I am child.  Name==%s  Parent's pid=%d\n" % (ufile2, pid)).encode())
 
-#        else:                           # parent (forked ok)
+ #       else:                           # parent (forked ok)
 
- #               os.write(1, ("I am parent.  Name=%s  Child's pid=%d\n" % (ufile1, forker)).encode())
+  #              os.write(1, ("I am parent.  Name=%s  Child's pid=%d\n" % (ufile1, forker)).encode())
