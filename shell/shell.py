@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import sys        # command line arguments
 import time
 import re         # regular expression tools
@@ -6,13 +7,14 @@ import subprocess # executing program
 
 inputuser = "none none"
 
-inputuser = input("Hello! Press enter to continue or 'exit' to exit. \n")
+inputuser = input("Hello! Press enter to continue or type 'exit' to exit. \n")
 
 while inputuser != "exit":
 
         inputuser = input("Please provide two file names. \n")
 
         print("Accepted names %s!" % inputuser)
+
 
         inputuser = inputuser.split( )
 
