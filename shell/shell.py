@@ -7,29 +7,33 @@ import subprocess # executing program
 
 inputuser = "none none"
 
-inputuser = input("$> ")
-
 while inputuser != "exit":
 
         inputuser = input("$> ")
-
-        inputuser = inputuser.split()
-
+        type(inputuser)
 
         pid = os.getpid()
-
 
         forker = os.fork()
 
         if forker < 0:
 
-                os.write(2, ("fork failed, returning %d\n" % forker).encode())
                 sys.exit(1)
 
         elif forker == 0:                   # child
+                
+                args = inputuser.split()
 
-                os.write(1, ("I am child.  Name==%s  Parent's pid=%d\n" % (ufile2, pid)).encode())
+                for dir in re.split(":", os.environ['PATH']): # try each directory in the path
+                        program = "%s/%s" % (dir, args[0])
+                        try:
+                                os.execve(program, args, os.environ) # try to exec program
+                        except FileNotFoundError:             # ...expected
+                                pass                              # ...fail quietly
 
-       # else:                           # parent (forked ok)
-
- #               os.write(1, ("I am parent.  Name=%s  Child's pid=%d\n" % (ufile1, forker)).encode())
+                
+                sys.exit(1)
+        else:
+                wait = os.wait()
+                                
+sys.exit(1)
