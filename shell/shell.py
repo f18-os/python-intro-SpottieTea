@@ -5,11 +5,15 @@ import re         # regular expression tools
 import os         # checking if file exists
 import subprocess # executing program
 
-inputuser = "none none"
+inputuser = "none"
 
 while inputuser != "exit":
+        oPrompt = "tell>"
+        if 'PS1' in os.environ:
+                oPrompt = os.environ['PS1']
+                
 
-        inputuser = input("$> ")
+        inputuser = input(oPrompt)
         type(inputuser)
 
         pid = os.getpid()
