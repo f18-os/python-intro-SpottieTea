@@ -7,23 +7,14 @@ import subprocess # executing program
 
 inputuser = "none none"
 
-inputuser = input("Hello! Press enter to continue or type 'exit' to exit. \n")
+inputuser = input("$> ")
 
 while inputuser != "exit":
 
-        inputuser = input("Please provide two file names. \n")
+        inputuser = input("$> ")
 
-        print("Accepted names %s!" % inputuser)
+        inputuser = inputuser.split()
 
-
-        inputuser = inputuser.split( )
-
-        print("Seperating files...")
-        
-        ufile1 = inputuser[0]
-        ufile2 = inputuser[1]
-
-        print("Successfully seperated %s and %s!" % (ufile1, ufile2))
 
         pid = os.getpid()
 
@@ -39,6 +30,6 @@ while inputuser != "exit":
 
                 os.write(1, ("I am child.  Name==%s  Parent's pid=%d\n" % (ufile2, pid)).encode())
 
-#        else:                           # parent (forked ok)
+       # else:                           # parent (forked ok)
 
  #               os.write(1, ("I am parent.  Name=%s  Child's pid=%d\n" % (ufile1, forker)).encode())
